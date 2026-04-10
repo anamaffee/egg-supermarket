@@ -4,70 +4,56 @@
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
 }
-
 body {
   background: #1a0d07;
   color: #fff;
 }
-
-/* HEADER */
+/* AQUI COMEÇA O HEADER */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 80px;
 }
-
 .header nav a {
   margin: 0 15px;
   text-decoration: none;
   color: #ddd;
   transition: 0.3s;
 }
-
 .header nav a:hover {
   color: #d4a373;
 }
-
-/* HERO */
 .Tudo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 60px 80px;
 }
-
 .textoinicio {
   max-width: 500px;
 }
-
 .colecao {
   color: #d4a373;
   font-size: 14px;
   letter-spacing: 2px;
 }
-
 .textoinicio h1 {
   font-size: 48px;
   margin: 20px 0;
 }
-
 .textoinicio h1 span {
   color: #d4a373;
   font-style: italic;
 }
-
 .textoinicio p {
   color: #ccc;
   margin-bottom: 30px;
 }
-
-/* BOTÕES */
 .buttons {
   display: flex;
   gap: 15px;
 }
-
 .btn-primeiro {
   background: #d4a373;
   border: none;
@@ -76,7 +62,6 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-
 .btn-Monte {
   background: transparent;
   border: 1px solid #d4a373;
@@ -85,9 +70,43 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
-
-/* IMAGEM */
 .ovoPrincipal img {
   width: 400px;
   border-radius: 20px;
+}
+.CaixotePai{
+  width: 100%;
+  height: 300px;
+  max-width: 500px;
+  overflow: hidden; 
+  border-radius: 10px;
+}
+.slide {
+  display: none; 
+  width: 100%;
+  height: 100%;
+}
+.slide.active {
+  display: block; 
+  animation: fade 0.5s; 
+}
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+/*AQUI COMECA A MAIN*/
+main{
+ width: 100%;
+ height: 550px;
+ background-color: rgb(4, 0, 255);
+}
+.Estrutura{
+  width: 200px;
+  height: 100px;
+  background-color: yellow ;
+  margin-left: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.Estrutura:first-child{
 }
