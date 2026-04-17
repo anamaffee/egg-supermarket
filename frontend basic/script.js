@@ -28,16 +28,51 @@ const produtos = [
      {nome:"Ovo Brigadeiro", preco:"89,90", img: "./brigadeiro.jpg"}, 
      {nome:"Ovo mezzo", preco:"89,90", img: "./mezzo.jpg"},
 ];
+const carrinho = Array();
 
 const todos = document.getElementById('todos-produtos');
 
-const cardsHTML = produtos.map(produto => `
+const cardsHTML = produtos.map((produto, index) => `
     <li class="card-produto">
         <img src="${produto.img}" alt="${produto.nome}">
         <span class="preco">R$ ${produto.preco}</span>
         <h3>${produto.nome}</h3>
-        <button>Comprar</button>
+        <button class="comprar" onclick="addCarrinho(${index})">Comprar</button>
     </li>
 `).join('');
 
 todos.innerHTML = cardsHTML;
+
+function addCarrinho(index) {
+    carrinho.push(produtos[index]); 
+    console.log("Carrinho atualizado:", carrinho);
+}
+
+function toggleCarrinho() {
+    document.getElementById('carrinho-lateral').classList.toggle('carrinho-visivel');
+}
+
+
+function renderizarCarrinho() {
+    const lista = document.getElementById('itens-carrinho');
+    const totalSpan = document.getElementById('valor-total');
+    
+    lista.innerHTML = '';
+    let total = 0;
+
+    carrinho.forEach(item => {
+        lista.innerHTML += `<li>${item.nome} - R$ ${item.preco}</li>`;
+        total += parseFloat(item.preco.replace(',', '.'));
+    });
+
+    totalSpan.innerText = total.toFixed(2).replace('.', ',');
+}
+
+
+function addCarrinho(index) {
+    carrinho.push(produtos[index]);
+    renderizarCarrinho(); 
+    
+    
+    document.getElementById('carrinho-lateral').classList.add('carrinho-visivel');
+}

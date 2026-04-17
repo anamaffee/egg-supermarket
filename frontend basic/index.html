@@ -18,6 +18,19 @@
     <a href="#">Avaliações</a>
     <a href="#">Contato</a>
   </nav>
+ <aside id="carrinho-lateral" class="carrinho-invisivel">
+    <div class="carrinho-header">
+        <h2>Seu Carrinho</h2>
+        <button onclick="toggleCarrinho()">Fechar</button>
+    </div>
+    
+    <ul id="itens-carrinho">
+        </ul>
+    
+    <div class="carrinho-footer">
+        <p>Total: R$ <span id="valor-total">0,00</span></p>
+    </div>
+</aside>
 </header>
 
 <section class="Tudo">
@@ -46,9 +59,14 @@
        
 <ul class="lista-produtos" id="todos-produtos"></ul>
 
+
+
      </main>
 
-    
+    <footer>
+      
+    </footer>
+
     <script src="./script.js"></script>
 </body>
 </html>
